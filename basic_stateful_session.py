@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
-from question_answering_agent import question_answering_agent
+from make_goal_agent import agent
 
 load_dotenv()
 
@@ -36,7 +36,7 @@ print("CREATED NEW SESSION:")
 print(f"\tSession ID: {SESSION_ID}")
 
 runner = Runner(
-    agent=question_answering_agent,
+    agent=agent,
     app_name=APP_NAME,
     session_service=session_service_stateful,
 )
